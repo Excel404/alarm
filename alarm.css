@@ -1,0 +1,30 @@
+.alarm-interface{
+  height:200px;
+  width: 250px;
+  background-color:grey;
+  padding:5px;
+  overflow: scroll;
+}
+.alarm-button{
+  height:30px;
+  width:100px;
+  color:grey;
+  background-color:blue;
+}
+.input-hour{
+  height:10px;
+  width:20px;
+  padding:5px;
+}
+.input-minute{
+  height:10px;
+  width:20px;
+  padding:5px;
+}
+.set-button{
+  height:30px;
+  width:100px;
+  color:grey;
+  background-color:blue;
+  float:right;
+}
