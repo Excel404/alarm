@@ -1,9 +1,22 @@
 <!DOCTYPE HTML>
 <html>
-  <body>
+  <head>
     <link rel= "stylesheet" type= "text/css" href= "alarm.css">
-    <script src ="alarm.js" type= "text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+  
+  </head>  
+  <body>
+    <div id = "alarm-interface">
+      <h1>Alarm</h2>
+      <button id = "alarm-button" onclick = 'createAlarm()'>Create New Alarm</button><br>
+      <span>Hour</span>
+      <input id = "input-hour" type = 'text'>
+      <span>Min:</span><input id ="input-minute" type ="text">
+      <input type ='radio' name= 'dayTime' value ='AM'>AM
+      <input type ='radio' name= 'dayTime' value ='PM'>PM
+      
+    </div>
   </body>
-
+  <script src ="alarm.js" type= "text/javascript"></script>
 </html>
