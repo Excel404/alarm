@@ -7,7 +7,7 @@ let hourElem = document.getElementById('input-hour');
 let minuteElem = document.getElementById('input-minute');
 let timeDivElem = document.getElementsByName('dayTime');
 
-function createAlarm(){
+function CreateAlarm(hour,minute){
   this.displayDiv = document.createElement("div");
   this.displayDiv.setAttribute('id', 'displayDiv');
   this.header = document.createElement("span");
@@ -31,7 +31,7 @@ function createAlarm(){
   this.displayDiv.appendChild(this.space);
   alarmInterface.appendChild(this.displayDiv);  
   
-  function checkAlarm(hour,minute){
+  let checkAlarm =()=>{
     hour = parseInt(hourElem.value);
     minute = parseInt(minuteElem.value);
     let setTime = new Date();
@@ -120,7 +120,7 @@ function createAlarm(){
   function alarmRing(){
     
     navigator.vibrate([800,200,800,200,800,200,800,200,800,300,800]);
-    //alert('wakeup');
+    alert('wakeup');
     
   }
   var snooze
