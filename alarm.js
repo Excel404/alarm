@@ -120,7 +120,7 @@ function CreateAlarm(hour,minute){
   function alarmRing(){
     
     navigator.vibrate([800,200,800,200,800,200,800,200,800,300,800]);
-    alert('wakeup');
+    //alert('wakeup');
     
   }
   var snooze
