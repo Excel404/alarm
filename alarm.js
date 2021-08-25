@@ -6,8 +6,14 @@ alarmInterface.style.height = window.screen.innerHeight;
 let hourElem = document.getElementById('input-hour');
 let minuteElem = document.getElementById('input-minute');
 let timeDivElem = document.getElementsByName('dayTime');
-
-function CreateAlarm(hour,minute){
+/*window.onload=()=>{
+  console.log("check");
+}*/
+let x = 0;
+function CreateAlarm(hour,minute,x=0){
+  window.localStorage.setItem(`hour${x}`, hourElem.value);
+  window.localStorage.setItem(`minute${x}`, minuteElem.value);
+  //console.log(localStorage);
   this.displayDiv = document.createElement("div");
   this.displayDiv.setAttribute('id', 'displayDiv');
   this.header = document.createElement("span");
@@ -50,7 +56,6 @@ function CreateAlarm(hour,minute){
           this.header.innerHTML ='Alarm'+ '<br>';
           this.displayDiv.appendChild(this.dismissBtn);
           this.displayDiv.appendChild(this.snoozeBtn);
-
           alarmRing();
         }
         else{
@@ -61,15 +66,10 @@ function CreateAlarm(hour,minute){
       }else if(timeDivElem[1].checked){
         this.time.innerHTML = hourElem.value +':'+ minuteElem.value+ timeDivElem[1].value+' ';
         hour = parseInt(hourElem.value)+12;
-        setTime2 = hour*3600 + minute*60;
-        timeRem = setTime2 - currentTime;
-        timeRem1 = hour - currentHour;
-        timeRem2 = minute - currentMinute;
         if (setTime2==currentTime){
           this.header.innerHTML ='Alarm'+ '<br>';
           this.displayDiv.appendChild(this.dismissBtn);
           this.displayDiv.appendChild(this.snoozeBtn);
-
           alarmRing();
         }
         else{
@@ -117,19 +117,18 @@ function CreateAlarm(hour,minute){
     
   }
   checkAlarm();
-  function alarmRing(){
-    
+  function alarmRing(){    
     navigator.vibrate([800,200,800,200,800,200,800,200,800,300,800]);
-    //alert('wakeup');
+    alert('wakeup');
     
   }
   var snooze
   function snoozeAlarm(){
-    console.log('snooze');
     snooze = window.setInterval(alarmRing, 5000);
   }
   function dismissAlarm(){
-    console.log('dismiss');
     window.clearInterval(snooze);
   }
+  //x++;
 }
+console.log(localStorage)
