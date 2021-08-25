@@ -9,13 +9,13 @@
   <body>
     <div id = "alarm-interface">
       <h1>Alarm</h2>
-      <button id = "alarm-button" onclick = 'new CreateAlarm(hourElem.value, minuteElem.value)'>Create New Alarm</button><br>
+      <button id = "alarm-button" onclick = 'new CreateAlarm(hourElem.value, minuteElem.value,x++)'>Create New Alarm</button><br>
       <span>Hour</span>
       <input id = "input-hour" type = 'text'>
       <span>Min:</span><input id ="input-minute" type ="text">
       <input type ='radio' name= 'dayTime' value ='AM'>AM
       <input type ='radio' name= 'dayTime' value ='PM'>PM
-      
+      <button id= 'clearAll' onclick="window.localStorage.clear()">Clear All Alarm</button>
     </div>
   </body>
   <script src ="alarm.js" type= "text/javascript"></script>
